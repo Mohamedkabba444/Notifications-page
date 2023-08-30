@@ -1,0 +1,256 @@
+:root {
+  --Red: hsl(1, 90%, 64%);
+  --Blue: hsl(219, 85%, 26%);
+
+  --White: hsl(0, 0%, 100%);
+  --Very-light-grayish-blue: hsl(210, 60%, 98%);
+  --Light-grayish-blue-1: hsl(211, 68%, 94%);
+  --Light-grayish-blue-2: hsl(205, 33%, 90%);
+  --Grayish-blue: hsl(219, 14%, 63%);
+  --Dark-grayish-blue: hsl(219, 12%, 42%);
+  --Very-dark-blue: hsl(224, 21%, 14%);
+
+  --fs-rugular: 16px;
+  --fw-regular: 500;
+  --fw-bold: 800;
+  --ff: "Plus Jakarta Sans", sans-serif;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+a,
+dd {
+  margin: 0;
+  text-decoration: none;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--ff);
+  font-weight: var(--fw-regular);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notification-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+
+  width: min(90%, 47.5rem);
+  background-color: var(--White);
+  padding: 2em;
+  margin: 2em auto;
+  border-radius: 1em;
+  box-shadow: 3px 3px 30px var(--Light-grayish-blue-1);
+}
+
+.notification-container .flex-items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
+
+.flex-items .title {
+  font-size: calc(var(--fs-rugular) + 0.2em);
+  color: var(--Very-dark-blue);
+  font-weight: var(--fw-bold);
+}
+
+.flex-items .title span {
+  background-color: var(--Blue);
+  color: var(--White);
+  padding: 0em 0.5em;
+  border-radius: 0.3em;
+  font-size: var(--fs-rugular);
+}
+
+.flex-items .mark-all a {
+  color: var(--Dark-grayish-blue);
+  font-size: calc(var(--fs-rugular) + 0.2em);
+}
+
+.flex-items .mark-all a:hover,
+.notification-container article .name:hover {
+  color: var(--Blue);
+}
+
+.notification-container article {
+  display: flex;
+  align-items: flex-start;
+  gap: 1em;
+
+  border-radius: 0.7em;
+  padding: 0.5em;
+}
+
+article .grid-items {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  
+  align-self: center;
+}
+.notification-container article .message {
+  position: relativ;
+}
+
+.notification-container article p {
+  color: var(--Dark-grayish-blue);
+}
+
+.notification-container :is(.max-webber, .angela-gray, .jacob) {
+  background-color: var(--Very-light-grayish-blue);
+}
+
+.max-webber.toggle,
+.jacob.toggle,
+.angela-gray.toggle {
+  background-color: transparent;
+}
+
+.notification-container .rizky .sub-message {
+  border: 1px solid var(--Very-light-grayish-blue);
+  color: var(--Dark-grayish-blue);
+  border-radius: 0.4em;
+  padding: 1em;
+  margin-top: 1.5em;
+  cursor: pointer;
+}
+
+.sub-message:hover {
+  background-color: var(--Very-light-grayish-blue);
+}
+
+.notification-container article span {
+  color: var(--Blue);
+  font-weight: var(--fw-bold);
+  cursor: pointer;
+}
+.notification-container article span:hover {
+  color: var(--Blue);
+}
+
+.max-webber .message span,
+.nathan .message span {
+  color: var(--Dark-grayish-blue);
+}
+
+.notification-container article .name {
+  color: var(--Very-dark-blue);
+  cursor: pointer;
+}
+
+.kimberly .chess img {
+  margin-left: 7.5em;
+}
+
+.dot {
+  height: 6px;
+  width: 6px;
+  border-radius: 50px;
+  background-color: var(--Red);
+  display: inline-flex;
+  margin: 2px;
+}
+
+@media (max-width: 375px) {
+  :root {
+    --fs-rugular: 9px;
+    --fw-regular: 300;
+    --fw-bold: 700;
+  }
+
+  picture,
+  img {
+    max-width: 100%;
+    min-width: 50%;
+  }
+
+  .notification-container {
+    padding: 2em 0.7em;
+  }
+  .notification-container article {
+    align-items: flex-start;
+    gap: 1em;
+  }
+
+  .notification-container article span {
+      font-size: calc(var(--fs-rugular) + 0.5em);
+  }
+
+  .flex-items :is(.mark-all a, .title, .title span) {
+    font-size: calc(var(--fs-rugular) + 0.5em);
+  }
+
+  .notification-container article {
+      justify-content: center;
+  }
+
+  .chess img {
+    margin-left: 0;
+  }
+}
